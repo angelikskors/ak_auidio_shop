@@ -140,7 +140,7 @@ class CustomerDao implements AbstractDao<Customer>{
     public boolean addAll(Collection<Customer> collection) {
         String sqlQuery="INSERT INTO customers " +
                 "(name,address,phone,rating)" +
-                " VALUES (?,?,?);";
+                " VALUES (?,?,?,?);";
         try {
             connection.setAutoCommit(false);
             PreparedStatement statement =connection.prepareStatement(sqlQuery);

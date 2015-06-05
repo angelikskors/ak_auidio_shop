@@ -22,13 +22,10 @@ public class Album {
 
 
 
-    public Album(long id, int year, String name) {
+    public Album(long id, int year, String name, long producer_id, String country, String language) {
         this.id = id;
         this.year = year;
         this.name = name;
-    }
-    public Album(long id, int year, String name, long producer_id, String country, String language) {
-        this(id,year,name);
         this.producer_id=producer_id;
         this.country=country;
         this.language=language;

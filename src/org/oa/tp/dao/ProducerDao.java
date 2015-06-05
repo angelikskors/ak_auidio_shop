@@ -153,7 +153,7 @@ class ProducerDao implements AbstractDao <Producer>{
 
         String sqlQuery="INSERT INTO producers " +
                 "(firstName, lastName,car_id,cat_id)" +
-                " VALUES (?,?,?,?,?);";
+                " VALUES (?,?,?,?);";
         try {
             connection.setAutoCommit(false);
             PreparedStatement statement =connection.prepareStatement(sqlQuery);

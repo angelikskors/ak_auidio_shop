@@ -45,11 +45,11 @@ public class AuthorDao implements AbstractDao<Author> {
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String firstName = resultSet.getString("firstName");
-                String lastNme=resultSet.getString("lastName");
+                String lastName=resultSet.getString("lastName");
                 int age = resultSet.getInt("age");
 
 
-                list.add(new Author(id, firstName,lastNme,age));
+                list.add(new Author(id, firstName,lastName,age));
 
             }
         } catch (SQLException e) {
@@ -68,10 +68,10 @@ public class AuthorDao implements AbstractDao<Author> {
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String firstName = resultSet.getString("firstName");
-                String lastNme=resultSet.getString("lastName");
+                String lastName=resultSet.getString("lastName");
                 int age = resultSet.getInt("age");
 
-                author = new Author(id, firstName,lastNme,age);
+                author = new Author(id, firstName,lastName,age);
                 break;
 
             }
