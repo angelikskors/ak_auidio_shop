@@ -36,35 +36,7 @@ public class AudioController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
 
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
-
-        System.out.println("Audios");
-        System.out.println("");
-        System.out.println("");
-
-        DaoFacade daoFacade3 = new DaoFacade();
-        Audio audio = new Audio(1, "Name1", 2, 20.5, 3, 30, 1);
-        Audio audio1 = new Audio(5, "Name2", 3, 30.5, 4, 50, 2);
-        Audio audio2 = new Audio(2, "Name3", 10, 23.5, 3, 20, 3);
-        Audio audio3 = new Audio(3, "Name5", 4, 25.5, 1, 10, 3);
-        Audio audio4 = new Audio(4, "Name4", 1, 22.5, 4, 5, 5);
-
-        List<Audio> audios = new ArrayList<>();
-        audios.add(audio);
-        audios.add(audio1);
-        audios.add(audio2);
-        audios.add(audio3);
-        audios.add(audio4);
-
-        for (Audio audio5 : audios) {
-            System.out.println("Load objects " + audio5);
-        }
-        daoFacade3.getAudioDao().add(audio);
-
-        System.out.println("______________________________________________________________________________________________");
-        Audio audio6 = daoFacade3.getAudioDao().findById(1);
-        System.out.println("found by Id " + audio6);
 
         System.out.println("______________________________________________________________________________________________");
         Audio audioChanged = new Audio(6, "Name6", 4, 3.3, 6, 55, 2);
@@ -89,15 +61,15 @@ public class AudioController implements Initializable {
     @FXML
     public void handleAdd(ActionEvent actionEvent) {
         try {
-            root = Launcher.loader("fxml/add_audio.fxml").load();
-            showNewWindow("Search by ID ", root);
+            root = Launcher.loader("fxml/audio/add_audio.fxml").load();
+            showNewWindow("Add audio ", root);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     @FXML
-    private void displayAudio(List<Audio> groups) {
+    public void displayAudio(List<Audio> groups) {
         observableList = FXCollections.observableList(groups);
         audioListView.setItems(observableList);
     }
@@ -105,7 +77,7 @@ public class AudioController implements Initializable {
     @FXML
     public void handleSearchById(ActionEvent actionEvent) {
         try {
-            root = Launcher.loader("fxml/search_byId.fxml").load();
+            root = Launcher.loader("fxml/audio/search_byId.fxml").load();
             showNewWindow("Search by ID ", root);
         } catch (IOException e) {
             e.printStackTrace();
@@ -116,7 +88,19 @@ public class AudioController implements Initializable {
 
     @FXML
     public void handleRemove(ActionEvent actionEvent) {
-
+        Audio selectedAudio = audioListView.getSelectionModel().getSelectedItem();
+        if (selectedAudio != null) {
+            observableList.remove(selectedAudio);
+        } else {
+            try {
+                root = Launcher.loader("fxml/audio/remove_byId.fxml").load();
+                AudioRemoveController audioremove = Launcher.loader("fxml/audio/remove_byId.fxml").getController();
+                audioremove.getObservablelist(observableList);
+                showNewWindow("Remove Audio ", root);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
 

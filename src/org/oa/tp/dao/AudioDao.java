@@ -93,7 +93,7 @@ class AudioDao implements AbstractDao<Audio> {
         Audio audio  = findById(audioId);
 
         try {
-            statement.executeUpdate("DELETE FROM audios WHERE id"+ audioId);
+            statement.executeUpdate("DELETE FROM audios WHERE id=" + audio.getId());
             return true;
         } catch (SQLException e) {
             e.printStackTrace();

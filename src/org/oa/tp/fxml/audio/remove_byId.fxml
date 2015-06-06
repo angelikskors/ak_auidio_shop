@@ -1,0 +1,12 @@
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.oa.tp.controllers.AudioRemoveController" alignment="center">
+    <children>
+        <Label text="Write down the Id to remove"/>
+        <TextField fx:id="id"/>
+        <Button text="Remove" onAction="#handleRemove"/>
+        <Label fx:id="result"/>
+    </children>
+</VBox>

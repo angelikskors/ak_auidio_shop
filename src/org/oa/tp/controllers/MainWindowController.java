@@ -31,7 +31,7 @@ public class MainWindowController implements Initializable {
     public void handleAudios(ActionEvent actionEvent) {
 
         try {
-            root = Launcher.loader("fxml/audio_base.fxml").load();
+            root = Launcher.loader("fxml/audio/audio_base.fxml").load();
             showNewWindow(titleAudios, root);
         } catch (IOException e) {
             e.printStackTrace();
