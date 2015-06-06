@@ -62,7 +62,7 @@ public class AudioController implements Initializable {
     public void handleAdd(ActionEvent actionEvent) {
         try {
             root = Launcher.loader("fxml/audio/add_audio.fxml").load();
-            showNewWindow("Add audio ", root);
+            showNewWindow("Add audio ", root, 200, 200);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -78,7 +78,7 @@ public class AudioController implements Initializable {
     public void handleSearchById(ActionEvent actionEvent) {
         try {
             root = Launcher.loader("fxml/audio/search_byId.fxml").load();
-            showNewWindow("Search by ID ", root);
+            showNewWindow("Search by ID ", root, 200, 200);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -96,7 +96,7 @@ public class AudioController implements Initializable {
                 root = Launcher.loader("fxml/audio/remove_byId.fxml").load();
                 AudioRemoveController audioremove = Launcher.loader("fxml/audio/remove_byId.fxml").getController();
                 audioremove.getObservablelist(observableList);
-                showNewWindow("Remove Audio ", root);
+                showNewWindow("Remove Audio ", root, 200, 200);
             } catch (IOException e) {
                 e.printStackTrace();
             }

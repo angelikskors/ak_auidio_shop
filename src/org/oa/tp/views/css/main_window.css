@@ -1,0 +1,40 @@
+.background {
+    -fx-background-image: url("/pictures/music2.jpg");
+    -fx-background-image-size: 230;
+}
+
+.button {
+    -fx-min-width: 120;
+    -fx-min-height: 40;
+    -fx-padding: 5 22 5 22;
+    -fx-border-color: #b2beca;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-background-color: #002851;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 11pt;
+    -fx-text-fill: #b2beca;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+    -fx-alignment: baseline-center;
+}
+
+.button:hover {
+    -fx-background-color: #66ff66;
+    -fx-text-fill: #11114e;
+    -fx-border-color: #11114e;
+    -fx-border-width: 2;
+}
+
+.welcome-label {
+    -fx-font-size: 30pt;
+    -fx-font-style: italic;
+    -fx-text-fill: #000080;
+    -fx-font-weight: 700;
+}
+
+.welcome-label-hover {
+    -fx-font-size: 11pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: white;
+    -fx-opacity: 1;
+}

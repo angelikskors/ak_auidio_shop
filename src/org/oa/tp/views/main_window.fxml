@@ -3,6 +3,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <BorderPane xmlns:fx="http://javafx.com/fxml/1"
             maxHeight="-Infinity"
             maxWidth="-Infinity"
@@ -11,44 +14,65 @@
             prefHeight="400.0"
             prefWidth="600.0"
             xmlns="http://javafx.com/javafx/8"
-            fx:controller="org.oa.tp.controllers.MainWindowController">
+            fx:controller="org.oa.tp.controllers.MainWindowController" styleClass="background"
+            stylesheets="@css/main_window.css">
     <top>
-        <VBox>
+        <VBox spacing="30" alignment="CENTER">
             <children>
-                <Label text="Welcome to Audio Shop" layoutX="200" layoutY="100"/>
-                <Label text="Choose any database devoted to music" layoutX="200" layoutY="200"/>
+                <Label text=" Welcome to Audio Shop !" styleClass="welcome-label" stylesheets="@css/main_window.css"/>
             </children>
+            <padding>
+                <Insets bottom="20.0" left="10.0" right="10.0" top="10.0"/>
+            </padding>
         </VBox>
 
     </top>
 
     <center>
-        <VBox spacing="20.0">
+        <VBox spacing="30.0">
             <children>
-                <Button text="Albums" onAction="#handleAlbums"/>
-                <Button text="Audios " onAction="#handleAudios"/>
-                <Button text="Authors" onAction="#handleAuthors"/>
-                <Button text="Cars " onAction="#handleCars"/>
-                <Button text="Cats " onAction="#handleCats"/>
-                <Button text="Customers" onAction="#handleCustomers"/>
-                <Button text="Genres " onAction="#handleGenres"/>
-                <Button text="Orders " onAction="#handleOrders"/>
-                <Button text="Producers " onAction="#handleProducers"/>
+                <HBox spacing="360">
+                    <Button text="Albums" onAction="#handleAlbums" styleClass="button"
+                            stylesheets="@css/main_window.css"/>
+                    <Button text="Producers " onAction="#handleProducers" styleClass="button"
+                            stylesheets="@css/main_window.css"/>
+                </HBox>
+                <HBox spacing="360">
+                    <Button text="Authors" onAction="#handleAuthors" styleClass="button"
+                            stylesheets="@css/main_window.css"/>
+                    <Button text="Cars " onAction="#handleCars" styleClass="button" stylesheets="@css/main_window.css"/>
+                </HBox>
+
+
+                <HBox spacing="370">
+                    <Button text="Genres " onAction="#handleGenres" styleClass="button"
+                            stylesheets="@css/main_window.css"/>
+                    <Button text="Orders " onAction="#handleOrders" styleClass="button"
+                            stylesheets="@css/main_window.css"/>
+                </HBox>
+                <HBox spacing="370">
+                    <Button text="Cats " onAction="#handleCats" styleClass="button" stylesheets="@css/main_window.css"/>
+                    <Button text="Customers" onAction="#handleCustomers" styleClass="button"
+                            stylesheets="@css/main_window.css"/>
+                </HBox>
+                <HBox alignment="CENTER">
+                    <ImageView fx:id="img" layoutX="29.0" layoutY="44.0" fitHeight="50" fitWidth="50"
+                               pickOnBounds="true">
+                        <image>
+                            <Image url="@/pictures/disco.png"/>
+                        </image>
+                    </ImageView>
+                    <Button text="Audios " onAction="#handleAudios" styleClass="button"
+                            stylesheets="@css/main_window.css"/>
+                </HBox>
             </children>
         </VBox>
     </center>
-    <right>
-        <VBox spacing="20.0">
 
-        </VBox>
-    </right>
-    <left>
-
-    </left>
     <bottom>
-        <Label text="Let the music accompany you during the life trip"/>
+
     </bottom>
     <padding>
-        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
     </padding>
 </BorderPane>

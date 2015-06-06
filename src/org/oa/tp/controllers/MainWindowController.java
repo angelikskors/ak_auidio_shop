@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import org.oa.tp.core.Launcher;
 
@@ -15,12 +17,13 @@ import java.util.ResourceBundle;
 
 public class MainWindowController implements Initializable {
     private final String titleAudios = "Audio";
+    public ImageView img;
     Parent root;
 
-    public static void showNewWindow(String title, Parent root) {
+    public static void showNewWindow(String title, Parent root, int width, int height) {
         Stage stage = new Stage();
         stage.setTitle(title);
-        stage.setScene(new Scene(root));
+        stage.setScene(new Scene(root, width, height));
         stage.show();
     }
 
@@ -32,7 +35,7 @@ public class MainWindowController implements Initializable {
 
         try {
             root = Launcher.loader("fxml/audio/audio_base.fxml").load();
-            showNewWindow(titleAudios, root);
+            showNewWindow(titleAudios, root, 880, 400);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -69,6 +72,8 @@ public class MainWindowController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        Image image = new Image("file: disco.png");
+        img = new ImageView();
+        img.setImage(image);
     }
 }

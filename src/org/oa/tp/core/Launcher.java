@@ -20,7 +20,7 @@ public class Launcher {
             Platform.exit();
         }
         Main.getPrimaryStage().setTitle("Audio Shop");
-        Main.getPrimaryStage().setScene(new Scene(root, 500, 400));
+        Main.getPrimaryStage().setScene(new Scene(root, 600, 420));
     }
 
     public static FXMLLoader loader(String uri) {

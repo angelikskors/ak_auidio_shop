@@ -5,52 +5,54 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Button?>
 <VBox xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.oa.tp.controllers.AudioController" alignment="center">
+      fx:controller="org.oa.tp.controllers.AudioController" alignment="center" styleClass="background"
+      stylesheets="@css/Table_style.css">
     <children>
-        <TableView fx:id="audioListView">
+        <TableView fx:id="audioListView" styleClass="table-view" stylesheets="@css/Table_style.css">
             <columns>
-                <TableColumn text="id">
+                <TableColumn prefWidth="75" text="id" styleClass="text-field">
                     <cellValueFactory>
                         <PropertyValueFactory property="id"/>
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn text="Name">
+                <TableColumn prefWidth="100" text="Name">
                     <cellValueFactory>
                         <PropertyValueFactory property="name"/>
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn text="Author id">
+                <TableColumn prefWidth="150" text="Author id">
                     <cellValueFactory>
                         <PropertyValueFactory property="authorId"/>
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn text="Genre id">
+                <TableColumn prefWidth="150" text="Genre id">
                     <cellValueFactory>
                         <PropertyValueFactory property="genreId"/>
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn text="Album id">
+                <TableColumn prefWidth="150" text="Album id">
                     <cellValueFactory>
                         <PropertyValueFactory property="albumId"/>
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn text="Duration">
+                <TableColumn prefWidth="150" text="Duration">
                     <cellValueFactory>
                         <PropertyValueFactory property="duration"/>
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn text="Price">
+                <TableColumn prefWidth="75" text="Price">
                     <cellValueFactory>
                         <PropertyValueFactory property="price"/>
                     </cellValueFactory>
                 </TableColumn>
             </columns>
         </TableView>
-        <HBox spacing="6">
+        <HBox spacing="6" alignment="CENTER">
             <children>
-                <Button text="Add" onAction="#handleAdd"/>
-                <Button text="Search" onAction="#handleSearchById"/>
-                <Button text="Remove" onAction="#handleRemove"/>
+                <Button text="Add" onAction="#handleAdd" styleClass="button" stylesheets="@css/Table_style.css"/>
+                <Button text="Search" onAction="#handleSearchById" styleClass="button"
+                        stylesheets="@css/Table_style.css"/>
+                <Button text="Remove" onAction="#handleRemove" styleClass="button" stylesheets="@css/Table_style.css"/>
             </children>
             <padding>
                 <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
