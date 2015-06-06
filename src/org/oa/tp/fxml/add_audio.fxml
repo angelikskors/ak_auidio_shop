@@ -1,0 +1,22 @@
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.oa.tp.controllers.AudioAddController" alignment="center">
+    <children>
+        <Label text="Audio name"/>
+        <TextField fx:id="audio_nameTextField"/>
+        <Label text="Author id"/>
+        <TextField fx:id="author_idTextField"/>
+        <Label text="duration"/>
+        <TextField fx:id="durationTextField"/>
+        <Label text="price"/>
+        <TextField fx:id="priceTextField"/>
+        <Label text="genre_id"/>
+        <TextField fx:id="genre_idTextField"/>
+        <Label text="album_id"/>
+        <TextField fx:id="album_idTextField"/>
+        <Button text="Save" onAction="#handleSave"/>
+
+    </children>
+</VBox>

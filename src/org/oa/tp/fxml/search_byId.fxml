@@ -7,6 +7,6 @@
         <Label fx:id="whatToSearch"/>
         <TextField fx:id="ida" text="fgsgss" visible="true"/>
         <Button text="Result" onAction="#handleGetResult"/>
-
+        <Label fx:id="result"/>
     </children>
 </VBox>

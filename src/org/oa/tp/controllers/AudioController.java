@@ -14,7 +14,6 @@ import org.oa.tp.core.Launcher;
 import org.oa.tp.dao.DaoFacade;
 import org.oa.tp.data.Audio;
 
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -26,6 +25,7 @@ import static org.oa.tp.controllers.MainWindowController.showNewWindow;
 public class AudioController implements Initializable {
 
 
+    public static ObservableList<Audio> observableList;
     private final DaoFacade daoFacade3 = new DaoFacade();
     @FXML
     public TableView<Audio> audioListView;
@@ -88,20 +88,22 @@ public class AudioController implements Initializable {
 
     @FXML
     public void handleAdd(ActionEvent actionEvent) {
-
+        try {
+            root = Launcher.loader("fxml/add_audio.fxml").load();
+            showNewWindow("Search by ID ", root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     private void displayAudio(List<Audio> groups) {
-        ObservableList<Audio> observableList = FXCollections.observableList(groups);
+        observableList = FXCollections.observableList(groups);
         audioListView.setItems(observableList);
     }
 
     @FXML
     public void handleSearchById(ActionEvent actionEvent) {
-
-        // fxmlLoader.setController(AudioSearchController.class);
-
         try {
             root = Launcher.loader("fxml/search_byId.fxml").load();
             showNewWindow("Search by ID ", root);
