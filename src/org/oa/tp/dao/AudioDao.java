@@ -152,7 +152,6 @@ class AudioDao implements AbstractDao<Audio> {
              PreparedStatement statement =connection.prepareStatement(sqlQuery);
              for(Audio audio: collection) {
                  statement.setString(1, audio.getName());
-
                  statement.setInt(2, (int) audio.getAuthorId());
                  statement.setInt(3, audio.getDuration());
                  statement.setDouble(4, audio.getPrice());

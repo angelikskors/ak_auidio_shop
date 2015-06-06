@@ -149,7 +149,7 @@
                 connection.setAutoCommit(false);
                 PreparedStatement statement =connection.prepareStatement(sqlQuery);
                 for(Order order: collection) {
-                    statement.setDate(1, order.getDate());
+                    statement.setDate(1, (Date) order.getDate());
 
                     statement.setInt(2, (int) order.getAudio_id());
                     statement.setInt(3, order.getAmount());

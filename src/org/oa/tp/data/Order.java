@@ -4,7 +4,7 @@ package org.oa.tp.data;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Order {
     @SerializedName("id")
@@ -22,6 +22,14 @@ public class Order {
     @Expose
     private Customer customer;
 
+    public Order(long id, Date date, long audio_id, int amount, long customer_id) {
+        this.id = id;
+        this.date = date;
+        this.audio_id = audio_id;
+        this.amount = amount;
+        this.customer_id = customer_id;
+    }
+
     public Audio getAudio() {
         return audio;
     }
@@ -36,14 +44,6 @@ public class Order {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
-    }
-
-    public Order(long id, Date date, long audio_id, int amount, long customer_id) {
-        this.id = id;
-        this.date = date;
-        this.audio_id = audio_id;
-        this.amount = amount;
-        this.customer_id = customer_id;
     }
 
     public long getId() {

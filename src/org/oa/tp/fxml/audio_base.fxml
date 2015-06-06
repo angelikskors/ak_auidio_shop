@@ -1,0 +1,63 @@
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.oa.tp.controllers.AudioController" alignment="center">
+    <children>
+        <TableView fx:id="audioListView">
+            <columns>
+                <TableColumn text="id">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="name"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Author id">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="authorId"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Genre id">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="genreId"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Album id">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="albumId"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Duration">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="duration"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Price">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="price"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        <HBox spacing="6">
+            <children>
+                <Button text="Add" onAction="#handleAdd"/>
+                <Button text="Search" onAction="#handleSearchById"/>
+                <Button text="Remove" onAction="#handleRemove"/>
+            </children>
+            <padding>
+                <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+            </padding>
+        </HBox>
+    </children>
+    <padding>
+        <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+    </padding>
+</VBox>

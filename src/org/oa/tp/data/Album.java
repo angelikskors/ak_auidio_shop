@@ -76,12 +76,12 @@ public class Album {
         this.name = name;
     }
 
-    public void setYear(int year) {
-        this.year = year;
-    }
-
     public int getYear() {
         return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 
     @Override
@@ -101,7 +101,7 @@ public class Album {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", year=" + year +
-                ", producer='" + producer + '\'' +
+                ", producer='" + producer_id + '\'' +
                 ", country='" + country + '\'' +
                 ", language='" + language + '\'' +
                 '}';

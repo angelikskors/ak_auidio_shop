@@ -51,10 +51,10 @@ class AlbumDao implements AbstractDao<Album> {
                 int id = resultSet.getInt("id");
                String name = resultSet.getString("name");
                 int year = resultSet.getInt("year");
-                int producer=resultSet.getInt("producer_id");
+                int producer_id = resultSet.getInt("producer_id");
                 String country=resultSet.getString("country");
                 String language=resultSet.getString("language");
-                list.add(new Album(id, year,name,producer,country,language));
+                list.add(new Album(id, year, name, producer_id, country, language));
 
             }
         } catch (SQLException e) {
@@ -73,10 +73,10 @@ class AlbumDao implements AbstractDao<Album> {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
                 int year = resultSet.getInt("year");
-                int producer=resultSet.getInt("producer_id");
+                int producer_id = resultSet.getInt("producer_id");
                 String country=resultSet.getString("country");
                 String language=resultSet.getString("language");
-                album = new Album(id, year, name,producer,country,language);
+                album = new Album(id, year, name, producer_id, country, language);
                 break;
 
             }
