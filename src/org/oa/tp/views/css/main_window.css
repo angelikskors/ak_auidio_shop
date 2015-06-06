@@ -19,7 +19,7 @@
 }
 
 .button:hover {
-    -fx-background-color: #66ff66;
+    -fx-background-color: #ee30a7;
     -fx-text-fill: #11114e;
     -fx-border-color: #11114e;
     -fx-border-width: 2;
@@ -27,8 +27,8 @@
 
 .welcome-label {
     -fx-font-size: 30pt;
-    -fx-font-style: italic;
-    -fx-text-fill: #000080;
+
+    -fx-text-fill: #6c7b8b;
     -fx-font-weight: 700;
 }
 

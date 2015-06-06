@@ -44,13 +44,13 @@
                 </HBox>
 
 
-                <HBox spacing="370">
+                <HBox spacing="360">
                     <Button text="Genres " onAction="#handleGenres" styleClass="button"
                             stylesheets="@css/main_window.css"/>
                     <Button text="Orders " onAction="#handleOrders" styleClass="button"
                             stylesheets="@css/main_window.css"/>
                 </HBox>
-                <HBox spacing="370">
+                <HBox spacing="360">
                     <Button text="Cats " onAction="#handleCats" styleClass="button" stylesheets="@css/main_window.css"/>
                     <Button text="Customers" onAction="#handleCustomers" styleClass="button"
                             stylesheets="@css/main_window.css"/>
