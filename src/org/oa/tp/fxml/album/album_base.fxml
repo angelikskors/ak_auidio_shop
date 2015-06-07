@@ -5,10 +5,10 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Button?>
 <VBox xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.oa.tp.controllers.audio.AudioController" alignment="center" styleClass="background"
+      fx:controller="org.oa.tp.controllers.album.AlbumController" alignment="center" styleClass="background"
       stylesheets="@css/Table_style.css">
     <children>
-        <TableView fx:id="audioListView" styleClass="table-view" stylesheets="@css/Table_style.css">
+        <TableView fx:id="albumTableView" styleClass="table-view" stylesheets="@css/Table_style.css">
             <columns>
                 <TableColumn prefWidth="75" text="id" styleClass="text-field">
                     <cellValueFactory>
@@ -20,29 +20,24 @@
                         <PropertyValueFactory property="name"/>
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="150" text="Author id">
+                <TableColumn prefWidth="150" text="Year">
                     <cellValueFactory>
-                        <PropertyValueFactory property="authorId"/>
+                        <PropertyValueFactory property="year"/>
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="150" text="Genre id">
+                <TableColumn prefWidth="150" text="Producer id">
                     <cellValueFactory>
-                        <PropertyValueFactory property="genreId"/>
+                        <PropertyValueFactory property="producer_id"/>
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="150" text="Album id">
+                <TableColumn prefWidth="150" text="country">
                     <cellValueFactory>
-                        <PropertyValueFactory property="albumId"/>
+                        <PropertyValueFactory property="country"/>
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="150" text="Duration">
+                <TableColumn prefWidth="150" text="language">
                     <cellValueFactory>
-                        <PropertyValueFactory property="duration"/>
-                    </cellValueFactory>
-                </TableColumn>
-                <TableColumn prefWidth="75" text="Price">
-                    <cellValueFactory>
-                        <PropertyValueFactory property="price"/>
+                        <PropertyValueFactory property="language"/>
                     </cellValueFactory>
                 </TableColumn>
             </columns>

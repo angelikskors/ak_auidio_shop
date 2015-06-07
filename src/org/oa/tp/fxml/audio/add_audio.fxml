@@ -2,21 +2,26 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Button?>
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.oa.tp.controllers.AudioAddController" alignment="center">
+<?import javafx.geometry.Insets?>
+<VBox xmlns:fx="http://javafx.com/fxml" alignment="center" styleClass="background" stylesheets="@css/remove_byId.css"
+      spacing="10">
     <children>
-        <Label text="Audio name"/>
-        <TextField fx:id="audio_nameTextField"/>
-        <Label text="Author id"/>
-        <TextField fx:id="author_idTextField"/>
-        <Label text="duration"/>
-        <TextField fx:id="durationTextField"/>
-        <Label text="price"/>
-        <TextField fx:id="priceTextField"/>
-        <Label text="genre_id"/>
-        <TextField fx:id="genre_idTextField"/>
-        <Label text="album_id"/>
-        <TextField fx:id="album_idTextField"/>
-        <Button text="Save" onAction="#handleSave"/>
+        <Label text="Audio name" styleClass="label" stylesheets="@css/remove_byId.css"/>
+        <TextField fx:id="audio_nameTextField" styleClass="text-field" stylesheets="@css/remove_byId.css"/>
+        <Label text="Author id" styleClass="label" stylesheets="@css/remove_byId.css"/>
+        <TextField fx:id="author_idTextField" styleClass="text-field" stylesheets="@css/remove_byId.css"/>
+        <Label text="duration" styleClass="label" stylesheets="@css/remove_byId.css"/>
+        <TextField fx:id="durationTextField" styleClass="text-field" stylesheets="@css/remove_byId.css"/>
+        <Label text="price" styleClass="label" stylesheets="@css/remove_byId.css"/>
+        <TextField fx:id="priceTextField" styleClass="text-field" stylesheets="@css/remove_byId.css"/>
+        <Label text="Genre id" styleClass="label" stylesheets="@css/remove_byId.css"/>
+        <TextField fx:id="genre_idTextField" styleClass="text-field" stylesheets="@css/remove_byId.css"/>
+        <Label text="Album id" styleClass="label" stylesheets="@css/remove_byId.css"/>
+        <TextField fx:id="album_idTextField" styleClass="text-field" stylesheets="@css/remove_byId.css"/>
+        <Button text="Save" onAction="#handleSave" styleClass="button" stylesheets="@css/remove_byId.css"/>
 
     </children>
+    <padding>
+        <Insets left="10" right="10" top="10" bottom="10"/>
+    </padding>
 </VBox>

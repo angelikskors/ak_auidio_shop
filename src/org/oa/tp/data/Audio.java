@@ -11,10 +11,10 @@ public class Audio {
     private final String name;
     @SerializedName("author_id")
     private final long authorId;
-    @Expose
-    private Author author;
     @SerializedName("duration")
     private final int duration;
+    @Expose
+    private Author author;
     @SerializedName("price")
     private double  price;
     @SerializedName("genre_id")
@@ -98,6 +98,35 @@ public class Audio {
 
     public void setGenreId(long genreId) {
         this.genreId = genreId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Audio audio = (Audio) o;
+
+        return id == audio.id;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = (int) (id ^ (id >>> 32));
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (int) (authorId ^ (authorId >>> 32));
+        result = 31 * result + (author != null ? author.hashCode() : 0);
+        result = 31 * result + duration;
+        temp = Double.doubleToLongBits(price);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + (int) (genreId ^ (genreId >>> 32));
+        result = 31 * result + (genre != null ? genre.hashCode() : 0);
+        result = 31 * result + (int) (albumId ^ (albumId >>> 32));
+        result = 31 * result + (album != null ? album.hashCode() : 0);
+        return result;
     }
 
     @Override

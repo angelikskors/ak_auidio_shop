@@ -1,0 +1,42 @@
+.background {
+    -fx-background-color: #f8b0d1;
+
+}
+
+.button {
+    -fx-padding: 5 22 5 22;
+    -fx-border-color: #e2e2e2;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-background-color: #771d46;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 11pt;
+    -fx-text-fill: #d8d8d8;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+    -fx-alignment: baseline-center;
+}
+
+.button:hover {
+    -fx-background-color: lightskyblue;
+    -fx-text-fill: #11114e;
+}
+
+.text-field {
+    -fx-font-size: 12pt;
+    -fx-text-fill: #191970;
+    -fx-font-family: "Segoe UI Semibold";
+}
+
+.label {
+    -fx-font-size: 12pt;
+    -fx-alignment: center;
+    -fx-text-fill: midnightblue;
+    -fx-font-family: "Segoe UI Semibold";
+}
+
+.label-result {
+    -fx-alignment: center;
+    -fx-text-fill: midnightblue;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-weight: 500;
+}

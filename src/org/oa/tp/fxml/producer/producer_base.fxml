@@ -5,46 +5,37 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Button?>
 <VBox xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.oa.tp.controllers.audio.AudioController" alignment="center" styleClass="background"
+      fx:controller="org.oa.tp.controllers.producer.ProducerController" alignment="center" styleClass="background"
       stylesheets="@css/Table_style.css">
     <children>
-        <TableView fx:id="audioListView" styleClass="table-view" stylesheets="@css/Table_style.css">
+        <TableView fx:id="producerListView" styleClass="table-view" stylesheets="@css/Table_style.css">
             <columns>
                 <TableColumn prefWidth="75" text="id" styleClass="text-field">
                     <cellValueFactory>
                         <PropertyValueFactory property="id"/>
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="100" text="Name">
+                <TableColumn prefWidth="200" text="Fist Name">
                     <cellValueFactory>
-                        <PropertyValueFactory property="name"/>
+                        <PropertyValueFactory property="firstName"/>
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="150" text="Author id">
+                <TableColumn prefWidth="200" text="Last Name">
                     <cellValueFactory>
-                        <PropertyValueFactory property="authorId"/>
+                        <PropertyValueFactory property="lastName"/>
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="150" text="Genre id">
+                <TableColumn prefWidth="150" text="Car id">
                     <cellValueFactory>
-                        <PropertyValueFactory property="genreId"/>
+                        <PropertyValueFactory property="car_id"/>
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="150" text="Album id">
+                <TableColumn prefWidth="150" text="Cat id">
                     <cellValueFactory>
-                        <PropertyValueFactory property="albumId"/>
+                        <PropertyValueFactory property="cat_id"/>
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="150" text="Duration">
-                    <cellValueFactory>
-                        <PropertyValueFactory property="duration"/>
-                    </cellValueFactory>
-                </TableColumn>
-                <TableColumn prefWidth="75" text="Price">
-                    <cellValueFactory>
-                        <PropertyValueFactory property="price"/>
-                    </cellValueFactory>
-                </TableColumn>
+
             </columns>
         </TableView>
         <HBox spacing="6" alignment="CENTER">

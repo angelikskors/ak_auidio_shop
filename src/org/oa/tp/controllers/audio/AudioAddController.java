@@ -1,4 +1,4 @@
-package org.oa.tp.controllers;
+package org.oa.tp.controllers.audio;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;

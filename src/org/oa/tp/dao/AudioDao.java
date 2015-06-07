@@ -15,10 +15,10 @@ import java.util.logging.Logger;
 
 class AudioDao implements AbstractDao<Audio> {
      private static final String PATH = "audios.txt";
+    List<Audio> list;
      private Statement statement;
      private Connection connection;
      private Set<Audio> items = new HashSet<>();
-
      public AudioDao(Statement statement, Connection connection) {
          this.statement = statement;
          this.connection=connection;
@@ -43,7 +43,7 @@ class AudioDao implements AbstractDao<Audio> {
     @Override
     public List<Audio> loadAll() {
 
-        List<Audio> list = new ArrayList<>();
+        list = new ArrayList<>();
         try {
             ResultSet resultSet = statement.executeQuery("SELECT * FROM audios");
             while (resultSet.next()) {
@@ -131,9 +131,11 @@ class AudioDao implements AbstractDao<Audio> {
     @Override
     public boolean saveAll() {
         Gson gson = new Gson();
+        String json = gson.toJson(list);
         try (FileWriter fileWriter = new FileWriter(new File(PATH))) {
+            fileWriter.write(json);
+            fileWriter.close();
 
-            gson.toJson(items, fileWriter);
         } catch (FileNotFoundException e) {
             Logger.getLogger("shop").log(Level.INFO, "Not found");
         } catch (IOException e) {

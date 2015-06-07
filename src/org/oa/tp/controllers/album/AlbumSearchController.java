@@ -1,41 +1,38 @@
-package org.oa.tp.controllers;
+package org.oa.tp.controllers.album;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Window;
-import org.oa.tp.core.Launcher;
 import org.oa.tp.dao.DaoFacade;
-import org.oa.tp.data.Audio;
+import org.oa.tp.data.Album;
 
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class AudioSearchController implements Initializable {
+public class AlbumSearchController implements Initializable {
 
     public Label result;
     @FXML
     private Label whatToSearch;
     @FXML
-    private TextField ida;
+    private TextField id;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        whatToSearch.setText("Write down the id");
+        whatToSearch.setText("Write down the ID");
     }
 
     @FXML
     public void handleGetResult(ActionEvent actionEvent) {
 
         DaoFacade daoFacade3 = new DaoFacade();
-        Audio audio6 = daoFacade3.getAudioDao().findById(Integer.parseInt(ida.getText()));
-        result.setText("Audio parameters: " + "name " + audio6.getName() + " duration " + audio6.getDuration() + " price " + audio6.getPrice());
+        Album album = daoFacade3.getAlbumDao().findById(Integer.parseInt(id.getText()));
+        result.setText("Album parameters: " + "name " + album.getName() + " year " + album.getYear() + " country " + album.getCountry() + " language " + album.getCountry());
         Window window = result.getScene().getWindow();
         window.hide();
     }

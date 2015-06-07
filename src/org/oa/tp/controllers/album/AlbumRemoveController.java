@@ -1,4 +1,4 @@
-package org.oa.tp.controllers;
+package org.oa.tp.controllers.album;
 
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -7,30 +7,31 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Window;
+
 import org.oa.tp.dao.DaoFacade;
-import org.oa.tp.data.Audio;
+import org.oa.tp.data.Album;
+
 
 import java.net.URL;
-import java.util.AbstractList;
 import java.util.ResourceBundle;
 
-
-public class AudioRemoveController implements Initializable {
+public class AlbumRemoveController implements Initializable {
     @FXML
     public TextField id;
     @FXML
     public Label result;
-    private ObservableList<Audio> observableList;
+    private ObservableList<Album> observableList = AlbumController.observableList;
 
 
     @FXML
     public void handleRemove(ActionEvent actionEvent) {
         DaoFacade daoFacade3 = new DaoFacade();
-        daoFacade3.getAudioDao().delete(Integer.parseInt(id.getText()));
-        Audio audio = daoFacade3.getAudioDao().findById(Integer.parseInt(id.getText()));
-        observableList.remove(audio);
+
+        Album album = daoFacade3.getAlbumDao().findById(Integer.parseInt(id.getText()));
+        observableList.remove(album);
+        daoFacade3.getAlbumDao().delete(Integer.parseInt(id.getText()));
         result.setText("Deleted");
-        Window window = result.getScene().getWindow();
+        Window window = id.getScene().getWindow();
         window.hide();
     }
 
@@ -39,7 +40,8 @@ public class AudioRemoveController implements Initializable {
 
     }
 
-    public void getObservablelist(ObservableList<Audio> observableList) {
+    public void getObservablelist(ObservableList<Album> observableList) {
         this.observableList = observableList;
     }
 }
+

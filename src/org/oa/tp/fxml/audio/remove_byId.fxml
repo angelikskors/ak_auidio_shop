@@ -2,11 +2,16 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Button?>
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.oa.tp.controllers.AudioRemoveController" alignment="center">
+<?import javafx.geometry.Insets?>
+<VBox xmlns:fx="http://javafx.com/fxml" alignment="center" styleClass="background" stylesheets="@css/remove_byId.css"
+      spacing="10">
     <children>
-        <Label text="Write down the Id to remove"/>
-        <TextField fx:id="id"/>
-        <Button text="Remove" onAction="#handleRemove"/>
-        <Label fx:id="result"/>
+        <Label text="Write down the ID" styleClass="label" stylesheets="@css/remove_byId.css"/>
+        <TextField fx:id="id" styleClass="text-field" stylesheets="@css/remove_byId.css"/>
+        <Button text="Remove" onAction="#handleRemove" styleClass="button" stylesheets="@css/remove_byId.css"/>
+        <Label fx:id="result" styleClass="label-result" stylesheets="@css/remove_byId.css"/>
     </children>
+    <padding>
+        <Insets left="10" right="10" top="10" bottom="10"/>
+    </padding>
 </VBox>
