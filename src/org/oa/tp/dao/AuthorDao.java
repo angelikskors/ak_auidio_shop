@@ -17,6 +17,7 @@ public class AuthorDao implements AbstractDao<Author> {
     private Statement statement;
     private Connection connection;
     private Set<Author> items = new HashSet<>();
+    private List<Author> list;
     AuthorDao(){}
 
     public AuthorDao(Statement statement, Connection connection) {
@@ -39,7 +40,7 @@ public class AuthorDao implements AbstractDao<Author> {
 
     @Override
     public List<Author> loadAll() {
-        List<Author> list = new ArrayList<>();
+        list = new ArrayList<>();
         try {
             ResultSet resultSet = statement.executeQuery("SELECT * FROM authors");
             while (resultSet.next()) {
@@ -121,19 +122,21 @@ public class AuthorDao implements AbstractDao<Author> {
 
         return true;
     }
-
     @Override
     public boolean saveAll() {
         Gson gson = new Gson();
+        String json = gson.toJson(list);
         try (FileWriter fileWriter = new FileWriter(new File(PATH))) {
+            fileWriter.write(json);
+            fileWriter.close();
 
-            gson.toJson(items, fileWriter);
         } catch (FileNotFoundException e) {
             Logger.getLogger("shop").log(Level.INFO, "Not found");
         } catch (IOException e) {
             e.printStackTrace();
         }
         return false;
+
     }
 
     @Override

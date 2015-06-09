@@ -19,6 +19,7 @@ class AlbumDao implements AbstractDao<Album> {
     private Statement statement;
     private Connection connection;
     private Set<Album> items = new HashSet<>();
+    private List<Album> list;
 
     public AlbumDao(Statement statement, Connection connection) {
         this.statement = statement;
@@ -43,8 +44,7 @@ class AlbumDao implements AbstractDao<Album> {
 
     @Override
     public List<Album> loadAll() {
-
-        List<Album> list = new ArrayList<>();
+        list = new ArrayList<>();
         try {
             ResultSet resultSet = statement.executeQuery("SELECT * FROM albums");
             while (resultSet.next()) {
@@ -144,15 +144,18 @@ class AlbumDao implements AbstractDao<Album> {
     @Override
     public boolean saveAll() {
         Gson gson = new Gson();
+        String json = gson.toJson(list);
         try (FileWriter fileWriter = new FileWriter(new File(PATH))) {
+            fileWriter.write(json);
+            fileWriter.close();
 
-            gson.toJson(items, fileWriter);
         } catch (FileNotFoundException e) {
             Logger.getLogger("shop").log(Level.INFO, "Not found");
         } catch (IOException e) {
             e.printStackTrace();
         }
         return false;
+
     }
 
     @Override
