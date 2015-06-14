@@ -1,0 +1,27 @@
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+<VBox xmlns:fx="http://javafx.com/fxml" alignment="center" styleClass="background" stylesheets="@css/remove_byId.css"
+      spacing="10">
+    <children>
+        <Label text="id" styleClass="label" stylesheets="@css/remove_byId.css"/>
+        <TextField fx:id="idTextField" styleClass="text-field" stylesheets="@css/remove_byId.css"/>
+        <Label text="Album name" styleClass="label" stylesheets="@css/remove_byId.css"/>
+        <TextField fx:id="nameTextField" styleClass="text-field" stylesheets="@css/remove_byId.css"/>
+        <Label text="Album year" styleClass="label" stylesheets="@css/remove_byId.css"/>
+        <TextField fx:id="yearTextField" styleClass="text-field" stylesheets="@css/remove_byId.css"/>
+        <Label text="Producer id" styleClass="label" stylesheets="@css/remove_byId.css"/>
+        <TextField fx:id="producer_idTextField" styleClass="text-field" stylesheets="@css/remove_byId.css"/>
+        <Label text="Country" styleClass="label" stylesheets="@css/remove_byId.css"/>
+        <TextField fx:id="countryTextField" styleClass="text-field" stylesheets="@css/remove_byId.css"/>
+        <Label text="Language" styleClass="label" stylesheets="@css/remove_byId.css"/>
+        <TextField fx:id="languageTextField" styleClass="text-field" stylesheets="@css/remove_byId.css"/>
+        <Button text="Save" onAction="#handleSave" styleClass="button" stylesheets="@css/remove_byId.css"/>
+
+    </children>
+    <padding>
+        <Insets left="10" right="10" top="10" bottom="10"/>
+    </padding>
+</VBox>

@@ -91,7 +91,7 @@ class AlbumDao implements AbstractDao<Album> {
         Album album = findById(id);
 
         try {
-            statement.executeUpdate("DELETE FROM albums WHERE id"+ id);
+            statement.executeUpdate("DELETE FROM albums WHERE id=" + album.getId());
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -129,8 +129,8 @@ class AlbumDao implements AbstractDao<Album> {
     public boolean add(Album item) {
         try {
             statement.executeUpdate("INSERT INTO albums " +
-                    "(name, year,producer_id,country,language)" +
-                    " VALUES ('" + item.getName() + "' , '" + item.getYear() + item.getProducer_id()+item.getCountry()+item.getLanguage()+
+                    "(id,name, year,producer_id,country,language)" +
+                    " VALUES ('" + item.getId() + "' , '" + item.getName() + "' , '" + item.getYear() + item.getProducer_id() + item.getCountry() + item.getLanguage() +
                     "');");
 
         } catch (SQLException e) {

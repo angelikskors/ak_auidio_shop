@@ -4,10 +4,12 @@
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ProgressBar?>
 <VBox xmlns:fx="http://javafx.com/fxml"
       fx:controller="org.oa.tp.controllers.album.AlbumController" alignment="center" styleClass="background"
       stylesheets="@css/Table_style.css">
     <children>
+        <ProgressBar fx:id="progressLoading"/>
         <TableView fx:id="albumTableView" styleClass="table-view" stylesheets="@css/Table_style.css">
             <columns>
                 <TableColumn prefWidth="75" text="id" styleClass="text-field">
